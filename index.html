@@ -4,60 +4,155 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nyein Chan Aung | Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 text-gray-800">
-    <header class="bg-white shadow">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold">Nyein Chan Aung</h1>
-            <nav>
-                <a href="#about" class="mx-2 text-gray-600 hover:text-blue-500">About</a>
-                <a href="#projects" class="mx-2 text-gray-600 hover:text-blue-500">Projects</a>
-                <a href="#contact" class="mx-2 text-gray-600 hover:text-blue-500">Contact</a>
-            </nav>
-        </div>
+<body class="bg-gray-100">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-md fixed w-full top-0 z-10">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold text-gray-800"><a href="#home">Nyein Chan Aung</a></div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#home" class="text-gray-600 hover:text-gray-900">Home</a>
+                    <a href="#about" class="text-gray-600 hover:text-gray-900">About</a>
+                    <a href="#projects" class="text-gray-600 hover:text-gray-900">Projects</a>
+                    <a href="#contact" class="text-gray-600 hover:text-gray-900">Contact</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden" onclick="toggleMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden py-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="text-gray-600 hover:text-gray-900" onclick="toggleMenu()">Home</a>
+                    <a href="#about" class="text-gray-600 hover:text-gray-900" onclick="toggleMenu()">About</a>
+                    <a href="#projects" class="text-gray-600 hover:text-gray-900" onclick="toggleMenu()">Projects</a>
+                    <a href="#contact" class="text-gray-600 hover:text-gray-900" onclick="toggleMenu()">Contact</a>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <main class="container mx-auto px-6 py-10">
-        <!-- Hero Section -->
-        <section id="hero" class="text-center py-10">
-            <h2 class="text-4xl font-bold">Welcome to My Portfolio</h2>
-            <p class="mt-4 text-gray-600">I am a Software Engineer specializing in building exceptional digital experiences.</p>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="py-10">
-            <h3 class="text-3xl font-semibold mb-4">About Me</h3>
-            <p class="text-gray-600">I am a Team Lead at VIABELLS Singapore with over 8 years of experience in software development. My expertise includes e-commerce platforms, expense management systems, and frontend development using modern technologies like React.js and Next.js.</p>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="py-10">
-            <h3 class="text-3xl font-semibold mb-4">Projects</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-white rounded-lg shadow p-4">
-                    <h4 class="text-xl font-bold">Project 1</h4>
-                    <p class="text-gray-600">Description of an e-commerce system built with React and Node.js.</p>
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-12 md:pt-32">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2">
+                    <h1 class="text-2xl md:text-5xl font-bold text-gray-800 mb-4">Hi, Welcome to My Portfolio</h1>
+                    <p class="text-xl text-gray-600 mb-8">A passionate software developer creating beautiful and functional websites.</p>
+                    <a href="#contact" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300">Get in Touch</a>
                 </div>
-                <div class="bg-white rounded-lg shadow p-4">
-                    <h4 class="text-xl font-bold">Project 2</h4>
-                    <p class="text-gray-600">Description of an expense management tool using Laravel and MongoDB.</p>
+                <div class="md:w-1/2 mt-12 md:mt-0 ml-0 md:ml-5">
+                    <img src="nyeinchanaung.jpg" alt="Profile" class="rounded-lg shadow-lg w-full h-full object-cover">
                 </div>
-                <!-- Add more projects here -->
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="py-10">
-            <h3 class="text-3xl font-semibold mb-4">Contact</h3>
-            <p class="text-gray-600">Feel free to reach out to me via email at <a href="mailto:nyeinchanaung.nk@gmail.com" class="text-blue-500">nyeinchanaung.nk@gmail.com</a>.</p>
-        </section>
-    </main>
+    <!-- About Section -->
+    <section id="about" class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">My Journey</h3>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Skills</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gray-100 p-4 rounded">HTML & CSS</div>
+                        <div class="bg-gray-100 p-4 rounded">JavaScript</div>
+                        <div class="bg-gray-100 p-4 rounded">React</div>
+                        <div class="bg-gray-100 p-4 rounded">Tailwind CSS</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <footer class="bg-white shadow mt-10">
-        <div class="container mx-auto px-6 py-4 text-center">
-            <p class="text-gray-600">&copy; 2025 Nyein Chan Aung. All rights reserved.</p>
+    <!-- Projects Section -->
+    <section id="projects" class="py-12">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">My Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/400x300" alt="Project 1" class="w-full">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Project 1</h3>
+                        <p class="text-gray-600 mb-4">Description of project 1</p>
+                        <a href="#" class="text-blue-600 hover:text-blue-800">View Project →</a>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/400x300" alt="Project 2" class="w-full">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Project 2</h3>
+                        <p class="text-gray-600 mb-4">Description of project 2</p>
+                        <a href="#" class="text-blue-600 hover:text-blue-800">View Project →</a>
+                    </div>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/400x300" alt="Project 3" class="w-full">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Project 3</h3>
+                        <p class="text-gray-600 mb-4">Description of project 3</p>
+                        <a href="#" class="text-blue-600 hover:text-blue-800">View Project →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Get in Touch</h2>
+            <div class="max-w-lg mx-auto">
+                <form class="space-y-6">
+                    <div>
+                        <label class="block text-gray-700 mb-2" for="name">Name</label>
+                        <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2" for="email">Email</label>
+                        <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2" for="message">Message</label>
+                        <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Nyein Chan Aung. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="https://www.linkedin.com/in/nyein-chan-aung-nca" target="_blank" class="hover:text-gray-300">LinkedIn</a>
+                <a href="https://github.com/nyeinchanang" target="_blank" class="hover:text-gray-300">GitHub</a>
+            </div>
         </div>
     </footer>
+
+    <!-- Add this script before closing body tag -->
+    <script>
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        }
+    </script>
 </body>
 </html>
+
