@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nyein Chan Aung | Portfolio</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -15,6 +19,29 @@
             document.documentElement.classList.add('dark');
         }
     </script>
+    <style>
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            visibility: hidden;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            will-change: opacity, visibility;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+
+        .delay-200 {
+            transition-delay: 200ms;
+        }
+
+        .delay-400 {
+            transition-delay: 400ms;
+        }
+    </style>
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 transition-colors duration-200">
     <!-- Header/Navigation -->
@@ -71,7 +98,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="pt-24 pb-12 md:pt-32 dark:text-white">
+    <section id="home" class="pt-24 pb-12 md:pt-32 dark:text-white fade-in-section">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2">
@@ -87,7 +114,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-12 bg-white dark:bg-gray-800">
+    <section id="about" class="py-12 bg-white dark:bg-gray-800 fade-in-section">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-10 text-gray-800 dark:text-white">About Me</h2>
             <div class="grid md:grid-cols-1">
@@ -103,10 +130,76 @@
     <!-- Projects Section -->
     <section id="projects" class="py-12 dark:bg-gray-900">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-10 text-gray-800 dark:text-white">My Projects</h2>
+            <h2 class="text-3xl font-bold text-center mb-10 text-gray-800 dark:text-white fade-in-section">My Projects</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- SDAX Investor Project Card -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl fade-in-section">
+                    <div class="relative">
+                        <img src="/projects/sdax/investor.png" alt="SaleSucceed" class="w-full h-64 object-cover cursor-pointer" onclick="openGallery('salesucceed')">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <a href="https://investor.sdax.co/login" target="_blank" class="bg-white text-gray-800 px-4 py-2 rounded-lg font-semibold transform hover:scale-105 transition duration-200">
+                                Visit Website
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">SDAX Investor</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">A comprehensive digital assets exchange.</p>
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-gray-100 dark:border-gray-700">
+                            <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-md text-sm">Node.js</span>
+                            <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-md text-sm">Next.js</span>
+                            <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-md text-sm">MongoDB</span>
+                            <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-md text-sm">Microservices</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SDAX Issuer Project Card -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl fade-in-section">
+                    <div class="relative">
+                        <img src="/projects/sdax/issuer.png" alt="SaleSucceed" class="w-full h-64 object-cover cursor-pointer" onclick="openGallery('salesucceed')">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <a href="https://issuer.sdax.co/login" target="_blank" class="bg-white text-gray-800 px-4 py-2 rounded-lg font-semibold transform hover:scale-105 transition duration-200">
+                                Visit Website
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">SDAX Issuer</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">A comprehensive digital assets exchange.</p>
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-gray-100 dark:border-gray-700">
+                            <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-md text-sm">Node.js</span>
+                            <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-md text-sm">Next.js</span>
+                            <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-md text-sm">MongoDB</span>
+                            <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-md text-sm">Microservices</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SDAX Admin Project Card -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl fade-in-section">
+                    <div class="relative">
+                        <img src="/projects/sdax/admin.png" alt="SaleSucceed" class="w-full h-64 object-cover cursor-pointer" onclick="openGallery('salesucceed')">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <a href="https://admin.sdax.co/login" target="_blank" class="bg-white text-gray-800 px-4 py-2 rounded-lg font-semibold transform hover:scale-105 transition duration-200">
+                                Visit Website
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">SDAX Admin</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">A comprehensive digital assets exchange.</p>
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-gray-100 dark:border-gray-700">
+                            <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-md text-sm">Node.js</span>
+                            <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-md text-sm">Next.js</span>
+                            <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-md text-sm">MongoDB</span>
+                            <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-md text-sm">Microservices</span>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- SaleSucceed Project Card -->
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl fade-in-section">
                     <div class="relative">
                         <img src="/projects/salesucceed/sale.webp" alt="SaleSucceed" class="w-full h-64 object-cover cursor-pointer" onclick="openGallery('salesucceed')">
                         <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -128,7 +221,7 @@
                 </div>
 
                 <!-- Prudential Project Card -->
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl fade-in-section delay-200">
                     <div class="relative">
                         <img src="projects/lifegoals/home.png" alt="Prudential" class="w-full h-64 object-cover cursor-pointer" onclick="openGallery('lifegoals')">
                         <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -150,7 +243,7 @@
                 </div>
 
                 <!-- PRUShoppe Project Card -->
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl fade-in-section delay-400">
                     <div class="relative">
                         <img src="projects/prushoppe/cover.png" alt="Prudential" class="w-full h-64 object-cover cursor-pointer" onclick="openGallery('prushoppe')">
                         <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -172,7 +265,7 @@
                 </div>
                 
                 <!-- Bestprice Project Card -->
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl fade-in-section">
                     <div class="relative">
                         <img src="projects/bestprice/home.png" alt="Bestprice" class="w-full h-64 object-cover cursor-pointer" onclick="openGallery('bestprice')">
                         <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -193,7 +286,7 @@
                 </div>
 
                 <!-- 95Shop Project Card -->
-                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl fade-in-section">
                     <div class="relative">
                         <img src="projects/95shop/95shop.webp" alt="95Shop" class="w-full h-64 object-cover cursor-pointer" onclick="openGallery('shop95')">
                         <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -222,13 +315,34 @@
     <!-- Gallery Modal -->
     <div id="galleryModal" class="fixed inset-0 bg-black bg-opacity-90 hidden z-50 flex items-center justify-center">
         <button onclick="closeGallery()" class="absolute top-4 right-4 text-white text-4xl">&times;</button>
-        <button onclick="prevImage()" class="absolute left-4 text-white text-4xl">&lt;</button>
-        <button onclick="nextImage()" class="absolute right-4 text-white text-4xl">&gt;</button>
-        <img id="galleryImage" src="" alt="Gallery Image" class="max-h-[80vh] max-w-[90vw] object-contain">
+        
+        <!-- Previous button with new icon -->
+        <button onclick="prevImage()" class="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 bg-black bg-opacity-50 rounded-full">
+            <svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+            </svg>
+        </button>
+
+        <!-- Next button with new icon -->
+        <button onclick="nextImage()" class="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 bg-black bg-opacity-50 rounded-full">
+            <svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+        </button>
+        
+        <!-- Gallery Container -->
+        <div class="relative" onmouseover="pauseCarousel()" onmouseout="resumeCarousel()">
+            <img id="galleryImage" src="" alt="Gallery Image" class="max-h-[80vh] max-w-[90vw] object-contain">
+            
+            <!-- Gallery Indicators -->
+            <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                <!-- Indicators will be inserted here by JavaScript -->
+            </div>
+        </div>
     </div>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-12 bg-white dark:bg-gray-800">
+    <section id="contact" class="py-12 bg-white dark:bg-gray-800 fade-in-section">
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold text-center mb-10 text-gray-800 dark:text-white">Get in Touch</h2>
             <div class="max-w-lg mx-auto text-center">
@@ -312,20 +426,80 @@
 
         let currentGallery = [];
         let currentImageIndex = 0;
+        let carouselInterval = null;
+        const CAROUSEL_INTERVAL_TIME = 3000; // 3 seconds
+
+        function startCarousel() {
+            if (carouselInterval) clearInterval(carouselInterval);
+            carouselInterval = setInterval(nextImage, CAROUSEL_INTERVAL_TIME);
+        }
+
+        function pauseCarousel() {
+            if (carouselInterval) {
+                clearInterval(carouselInterval);
+                carouselInterval = null;
+            }
+        }
+
+        function resumeCarousel() {
+            if (!carouselInterval) {
+                startCarousel();
+            }
+        }
+
+        function createIndicators(total) {
+            const indicatorContainer = document.querySelector('#galleryModal .flex.space-x-2');
+            indicatorContainer.innerHTML = '';
+            
+            for (let i = 0; i < total; i++) {
+                const indicator = document.createElement('button');
+                indicator.className = 'w-3 h-3 rounded-full bg-gray-400 hover:bg-white transition-colors duration-200';
+                indicator.onclick = () => {
+                    goToImage(i);
+                    pauseCarousel();
+                    setTimeout(resumeCarousel, 2000); // Resume after 2 seconds
+                };
+                indicatorContainer.appendChild(indicator);
+            }
+            updateIndicators();
+        }
+
+        function updateIndicators() {
+            const indicators = document.querySelectorAll('#galleryModal .flex.space-x-2 button');
+            indicators.forEach((indicator, index) => {
+                if (index === currentImageIndex) {
+                    indicator.classList.remove('bg-gray-400');
+                    indicator.classList.add('bg-white');
+                } else {
+                    indicator.classList.remove('bg-white');
+                    indicator.classList.add('bg-gray-400');
+                }
+            });
+        }
+
+        function goToImage(index) {
+            currentImageIndex = index;
+            updateGalleryImage();
+            updateIndicators();
+        }
 
         function openGallery(projectId) {
             currentGallery = galleries[projectId];
             currentImageIndex = 0;
+            createIndicators(currentGallery.length);
             updateGalleryImage();
             document.getElementById('galleryModal').classList.remove('hidden');
+            startCarousel();
         }
 
         function closeGallery() {
             document.getElementById('galleryModal').classList.add('hidden');
+            pauseCarousel();
         }
 
         function updateGalleryImage() {
             document.getElementById('galleryImage').src = currentGallery[currentImageIndex];
+            updateIndicators();
         }
 
         function nextImage() {
@@ -338,13 +512,27 @@
             updateGalleryImage();
         }
 
-        // Keyboard navigation
+        // Update keyboard navigation to handle carousel
         document.addEventListener('keydown', function(e) {
             if (document.getElementById('galleryModal').classList.contains('hidden')) return;
             
-            if (e.key === 'Escape') closeGallery();
-            if (e.key === 'ArrowRight') nextImage();
-            if (e.key === 'ArrowLeft') prevImage();
+            if (e.key === 'Escape') {
+                closeGallery();
+            }
+            if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                pauseCarousel();
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+                setTimeout(resumeCarousel, 2000); // Resume after 2 seconds
+            }
+        });
+
+        // Add event listeners for manual navigation buttons
+        document.querySelectorAll('#galleryModal button').forEach(button => {
+            button.addEventListener('click', () => {
+                pauseCarousel();
+                setTimeout(resumeCarousel, 2000); // Resume after 2 seconds
+            });
         });
 
         function toggleDarkMode() {
@@ -360,6 +548,29 @@
                 localStorage.setItem('darkMode', 'true');
             }
         }
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Optional: stop observing the element after it's animated
+                    // observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in-section elements
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElems = document.querySelectorAll('.fade-in-section');
+            fadeElems.forEach(elem => observer.observe(elem));
+        });
     </script>
 </body>
 </html>
